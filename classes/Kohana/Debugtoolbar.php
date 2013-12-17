@@ -116,18 +116,6 @@ abstract class Kohana_Debugtoolbar {
 			self::firephp();
 		}
 
-		// Set alignment for toolbar
-		switch ($config->align)
-		{
-			case 'right':
-			case 'center':
-			case 'left':
-				$template->set('align', $config->align);
-				break;
-			default:
-				$template->set('align', 'left');
-		}
-
 		// Javascript for toolbar
 		$template->set('scripts', file_get_contents(Kohana::find_file('views', 'toolbar', 'js')));
 

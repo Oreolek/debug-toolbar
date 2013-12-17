@@ -65,17 +65,6 @@ var debugToolbar = {
 		document.getElementById('kohana-debug-toolbar').style.display = 'none';
 	},
 
-	swap: function() {
-		var toolbar = document.getElementById('debug-toolbar');
-		if (toolbar.className == 'debug-toolbar-align-center') {
-			toolbar.className = 'debug-toolbar-align-left';
-		} else if (toolbar.className == 'debug-toolbar-align-left') {
-			toolbar.className = 'debug-toolbar-align-right';
-		} else {
-			toolbar.className = 'debug-toolbar-align-center';
-		}
-	},
-
 	collapse: function() {
 		debugToolbar.toggle('debug-toolbar-menu');
 	}

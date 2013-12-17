@@ -33,12 +33,6 @@ $config['panels'] = array(
 );
 
 /*
- * Toolbar alignment
- * options: right, left, center
- */
-$config['align'] = 'right';
-
-/*
  * Secret Key
  */
 $config['secret_key'] = FALSE;
