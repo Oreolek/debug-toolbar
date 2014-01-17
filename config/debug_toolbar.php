@@ -38,6 +38,11 @@ $config['panels'] = array(
 $config['secret_key'] = FALSE;
 
 /**
+ * CSS style
+ **/
+$config['styles'] = TRUE;
+
+/**
  * Exclude configs
  */
 $config['skip_configs'] = array('database', 'encrypt');

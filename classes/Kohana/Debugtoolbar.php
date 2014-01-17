@@ -115,22 +115,24 @@ abstract class Kohana_Debugtoolbar {
 		{
 			self::firephp();
 		}
+		
+    Profiler::stop($token);
 
 		// Javascript for toolbar
 		$template->set('scripts', file_get_contents(Kohana::find_file('views', 'toolbar', 'js')));
 
 		// CSS for toolbar
-		$styles = file_get_contents(Kohana::find_file('views', 'toolbar', 'css'));
-
-		Profiler::stop($token);
+		if ($config->styles === TRUE)
+    {
+  		$styles = file_get_contents(Kohana::find_file('views', 'toolbar', 'css'));
+		  $template->set('styles', $styles);
+    }
 
 		// Benchmarks panel
 		if ($config->panels['benchmarks'] === TRUE)
 		{
 			$template->set('benchmarks', self::get_benchmarks());
 		}
-
-		$template->set('styles', $styles);
 
 		$result = $template->render();
 
